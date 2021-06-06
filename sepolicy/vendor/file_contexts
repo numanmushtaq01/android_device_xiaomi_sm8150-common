@@ -23,6 +23,9 @@
 # Charger
 /vendor/bin/batterysecret                                                                           u:object_r:vendor_batterysecret_exec:s0
 
+# FastCharge
+/sys/class/power_supply/bms/fastcharge_mode                                                         u:object_r:vendor_sysfs_battery_supply:s0
+
 # Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi                           u:object_r:hal_fingerprint_default_exec:s0
 
