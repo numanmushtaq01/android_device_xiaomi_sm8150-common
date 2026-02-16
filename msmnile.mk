@@ -208,8 +208,22 @@ endif
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.qti \
+    android.hardware.health-service.qti
+
+$(call soong_config_set,lineage_health,fast_charge_node,/sys/class/qcom-battery/restrict_chg)
+$(call soong_config_set,lineage_health,fast_charge_value_none,1)
+$(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
+
+ifneq ($(TARGET_IS_VAB),true)
+PRODUCT_PACKAGES += \
     android.hardware.health-service.qti_recovery
+endif
+
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
