@@ -412,3 +412,6 @@ PRODUCT_COPY_FILES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sm8150-common/sm8150-common-vendor.mk)
+
+# GameBar Performance Overlay
+$(call inherit-product, packages/apps/GameBar/gamebar.mk)
